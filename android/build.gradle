@@ -32,8 +32,12 @@ android {
     }
     dependencies {
         implementation fileTree(include: ['*.jar'], dir: 'libs')
-        implementation fileTree(dir: 'libs', include: ['*.aar'])
+        // implementation fileTree(dir: 'libs', include: ['*.aar'])
         // implementation 'com.razorpay:customui:3.9.+'
+        implementation('com.razorpay:customui:3.9.22') {  
+            exclude group: 'com.razorpay', module: 'customui-core'  
+        }  
+        implementation 'com.razorpay:customui-core:3.9.23'
         implementation 'com.google.code.gson:gson:2.8.7'
         implementation "androidx.core:core:1.0.0"
     }
